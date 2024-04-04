@@ -60,10 +60,11 @@ public class UsuarioResource {
 
     @Transactional
     @PostMapping(value = "/{id}/telefone")
-    public Usuario addTelefone(@PathVariable Long id, @RequestBody Telefone t) {
+    public Telefone save(@PathVariable Long id, @RequestBody Telefone t) {
         Usuario usuario = repo.findById(id).orElseThrow();
+        if (Objects.isNull(t)) return null;
         t.setUsuario(usuario);
-        return usuario;
+        return telefoneRepository.save(t);
     }
 
     @GetMapping(value = "/{id}/telefone")

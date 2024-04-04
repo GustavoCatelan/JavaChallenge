@@ -60,10 +60,11 @@ public class DistribuidorResource {
 
     @Transactional
     @PostMapping(value = "/{id}/telefone")
-    public Distribuidor addTelefone(@PathVariable Long id, @RequestBody Telefone t) {
+    public Telefone save(@PathVariable Long id, @RequestBody Telefone t) {
         Distribuidor distribuidor = repo.findById(id).orElseThrow();
+        if (Objects.isNull(t)) return null;
         t.setDistribuidor(distribuidor);
-        return distribuidor;
+        return telefoneRepository.save(t);
     }
 
     @GetMapping(value = "/{id}/telefone")

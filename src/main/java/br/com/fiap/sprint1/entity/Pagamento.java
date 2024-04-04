@@ -28,4 +28,15 @@ public class Pagamento {
 
     @Column(name = "STATUS_PAGAMENTO")
     private String status;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "COMPRA",
+            referencedColumnName = "ID_COMPRA",
+            foreignKey = @ForeignKey(
+                    name = "FK_PAGAMENTO_PAGAMENTO"
+            )
+    )
+
+    private Compra compra;
 }

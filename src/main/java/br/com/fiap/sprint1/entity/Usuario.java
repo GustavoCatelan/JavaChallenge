@@ -30,4 +30,15 @@ public class Usuario {
 
     @Column(name = "ASS_USUARIO")
     private String assinatura;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "COMPRA",
+            referencedColumnName = "ID_COMPRA",
+            foreignKey = @ForeignKey(
+                    name = "FK_USUARIO_COMPRA"
+            )
+    )
+
+    private Compra compra;
 }

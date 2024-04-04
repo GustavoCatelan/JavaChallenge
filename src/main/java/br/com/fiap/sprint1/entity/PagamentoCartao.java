@@ -37,4 +37,8 @@ public class PagamentoCartao {
 
     @Column(name = "CVV_PAGAMENTO_CARTAO")
     private int cvv;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PAGAMENTO", referencedColumnName = "ID_PAGAMENTO")
+    private Pagamento pagamento;
 }
