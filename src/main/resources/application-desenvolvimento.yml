@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/2tdspf-authentication?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
