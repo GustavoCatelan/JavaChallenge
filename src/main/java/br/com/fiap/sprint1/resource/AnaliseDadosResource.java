@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 @RestController
@@ -41,10 +42,11 @@ public class AnaliseDadosResource {
 
     @Transactional
     @PostMapping(value = "/{id}/servico")
-    public AnaliseDados addServico(@PathVariable Long id, @RequestBody Servico s) {
+    public Servico save(@PathVariable Long id, @RequestBody Servico s) {
         AnaliseDados analiseDados = repo.findById(id).orElseThrow();
+        if (Objects.isNull(s)) return null;
         s.setAnaliseDados(analiseDados);
-        return analiseDados;
+        return servicoRepository.save(s);
     }
 
     @GetMapping(value = "/{id}/servico")
@@ -54,10 +56,11 @@ public class AnaliseDadosResource {
 
     @Transactional
     @PostMapping(value = "/{id}/produto")
-    public AnaliseDados addProduto(@PathVariable Long id, @RequestBody Produto p) {
+    public Produto save(@PathVariable Long id, @RequestBody Produto p) {
         AnaliseDados analiseDados = repo.findById(id).orElseThrow();
+        if (Objects.isNull(p)) return null;
         p.setAnaliseDados(analiseDados);
-        return analiseDados;
+        return produtoRepository.save(p);
     }
 
     @GetMapping(value = "/{id}/produto")

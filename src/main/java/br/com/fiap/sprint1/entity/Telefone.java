@@ -32,15 +32,6 @@ public class Telefone {
     @Column(name = "NUM_TELEFONE")
     private int numero;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(
-            name = "USUARIO",
-            referencedColumnName = "ID_USUARIO",
-            foreignKey = @ForeignKey(
-                    name = "FK_TELEFONE_USUARIO"
-            )
-    )
-    private Usuario usuario;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
@@ -51,5 +42,15 @@ public class Telefone {
             )
     )
     private Distribuidor distribuidor;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "USUARIO",
+            referencedColumnName = "ID_USUARIO",
+            foreignKey = @ForeignKey(
+                    name = "FK_TELEFONE_USUARIO"
+            )
+    )
+    private Usuario usuario;
 
 }

@@ -12,4 +12,5 @@ import java.util.List;
     List<Telefone> findByDistribuidorId(Long id);
 
     List<Telefone> findByUsuarioId(Long id);
+
 }

@@ -29,4 +29,26 @@ public class Compra {
     @Column(name = "STATUS_COMPRA")
     private String status;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "USUARIO",
+            referencedColumnName = "ID_USUARIO",
+            foreignKey = @ForeignKey(
+                    name = "FK_COMPRA_USUARIO"
+            )
+    )
+
+    private Usuario usuario;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "PAGAMENTO",
+            referencedColumnName = "ID_PAGAMENTO",
+            foreignKey = @ForeignKey(
+                    name = "FK_COMPRA_USUARIO"
+            )
+    )
+
+    private Pagamento pagamento;
+
 }

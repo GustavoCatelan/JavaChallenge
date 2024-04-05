@@ -47,10 +47,11 @@ public class DistribuidorResource {
 
     @Transactional
     @PostMapping(value = "/{id}/endereco")
-    public Distribuidor addEndereco(@PathVariable Long id, @RequestBody Endereco e) {
+    public Endereco save(@PathVariable Long id, @RequestBody Endereco e) {
         Distribuidor distribuidor = repo.findById(id).orElseThrow();
+        if (Objects.isNull(e)) return null;
         e.setDistribuidor(distribuidor);
-        return distribuidor;
+        return enderecoRepository.save(e);
     }
 
     @GetMapping(value = "/{id}/endereco")
@@ -75,11 +76,8 @@ public class DistribuidorResource {
     @Transactional
     @PostMapping(value = "/{id}/servico")
     public Distribuidor save(@PathVariable Long id, @RequestBody Servico s) {
-
         if (Objects.isNull(s)) return null;
-
         Distribuidor distribuidor = repo.findById(id).orElseThrow();
-
         if (Objects.nonNull(s.getId())) {
             s = servicoRepository.findById(s.getId()).orElseThrow();
         }
@@ -96,11 +94,8 @@ public class DistribuidorResource {
     @Transactional
     @PostMapping(value = "/{id}/produto")
     public Distribuidor save(@PathVariable Long id, @RequestBody Produto p) {
-
         if (Objects.isNull(p)) return null;
-
         Distribuidor distribuidor = repo.findById(id).orElseThrow();
-
         if (Objects.nonNull(p.getId())) {
             p = produtoRepository.findById(p.getId()).orElseThrow();
         }

@@ -29,6 +29,9 @@ public class UsuarioResource {
     @Autowired
     private PessoaJuridicaRepository pessoaJuridicaRepository;
 
+    @Autowired
+    private CompraRepository compraRepository;
+
     @GetMapping
     public List<Usuario> findAll() {
         return repo.findAll();
@@ -46,19 +49,6 @@ public class UsuarioResource {
     }
 
     @Transactional
-    @PostMapping(value = "/{id}/endereco")
-    public Usuario addEndereco(@PathVariable Long id, @RequestBody Endereco e) {
-        Usuario usuario = repo.findById(id).orElseThrow();
-        e.setUsuario(usuario);
-        return usuario;
-    }
-
-    @GetMapping(value = "/{id}/endereco")
-    public List<Endereco> findEnderecoByUsuario(@PathVariable Long id) {
-        return enderecoRepository.findByUsuarioId(id);
-    }
-
-    @Transactional
     @PostMapping(value = "/{id}/telefone")
     public Telefone save(@PathVariable Long id, @RequestBody Telefone t) {
         Usuario usuario = repo.findById(id).orElseThrow();
@@ -68,16 +58,31 @@ public class UsuarioResource {
     }
 
     @GetMapping(value = "/{id}/telefone")
-    public List<Telefone> findTelefoneByUsuario(@PathVariable Long id) {
+    public List<Telefone> findTelefonebyUsuario(@PathVariable Long id) {
         return telefoneRepository.findByUsuarioId(id);
     }
 
     @Transactional
-    @PostMapping(value = "/{id}/pessoaFisica")
-    public Usuario addPessoaFisica(@PathVariable Long id, @RequestBody PessoaFisica pf) {
+    @PostMapping(value = "/{id}/endereco")
+    public Endereco save(@PathVariable Long id, @RequestBody Endereco e) {
         Usuario usuario = repo.findById(id).orElseThrow();
+        if (Objects.isNull(e)) return null;
+        e.setUsuario(usuario);
+        return enderecoRepository.save(e);
+    }
+
+    @GetMapping(value = "/{id}/endereco")
+    public List<Endereco> findEnderecoByUsuario(@PathVariable Long id) {
+        return enderecoRepository.findByUsuarioId(id);
+    }
+
+    @Transactional
+    @PostMapping(value = "/{id}/pessoaFisica")
+    public PessoaFisica save(@PathVariable Long id, @RequestBody PessoaFisica pf) {
+        Usuario usuario = repo.findById(id).orElseThrow();
+        if (Objects.isNull(pf)) return null;
         pf.setUsuario(usuario);
-        return usuario;
+        return pessoaFisicaRepository.save(pf);
     }
 
     @GetMapping(value = "/{id}/PessoaFisica")
@@ -87,14 +92,29 @@ public class UsuarioResource {
 
     @Transactional
     @PostMapping(value = "/{id}/pessoaJuridica")
-    public Usuario addPessoaJuridica(@PathVariable Long id, @RequestBody PessoaJuridica pj) {
+    public PessoaJuridica save(@PathVariable Long id, @RequestBody PessoaJuridica pj) {
         Usuario usuario = repo.findById(id).orElseThrow();
+        if (Objects.isNull(pj)) return null;
         pj.setUsuario(usuario);
-        return usuario;
+        return pessoaJuridicaRepository.save(pj);
     }
 
     @GetMapping(value = "/{id}/PessoaJuridica")
     public List<PessoaJuridica> findPessoaJuridicaByUsuario(@PathVariable Long id) {
         return pessoaJuridicaRepository.findByUsuarioId(id);
+    }
+
+    @Transactional
+    @PostMapping(value = "/{id}/compra")
+    public Compra save(@PathVariable Long id, @RequestBody Compra c) {
+        Usuario usuario = repo.findById(id).orElseThrow();
+        if (Objects.isNull(c)) return null;
+        c.setUsuario(usuario);
+        return compraRepository.save(c);
+    }
+
+    @GetMapping(value = "/{id}/compra")
+    public List<Compra> findCompraByUsuario(@PathVariable Long id) {
+        return compraRepository.findByUsuarioId(id);
     }
 }
