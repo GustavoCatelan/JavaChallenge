@@ -82,8 +82,7 @@ public class DistribuidorResource {
             s = servicoRepository.findById(s.getId()).orElseThrow();
         }
         s.getDistribuidor().add(distribuidor);
-        return distribuidor;
-
+        return  repo.save(distribuidor);
     }
 
     @GetMapping(value = "/{id}/servico")

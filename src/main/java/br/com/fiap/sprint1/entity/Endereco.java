@@ -24,13 +24,13 @@ public class Endereco {
     private Long id;
 
     @Column(name = "CEP_ENDERECO")
-    private int cep;
+    private String cep;
 
     @Column(name = "LOGRADOURO_ENDERECO")
     private  String logradouro;
 
     @Column(name = "NUM_ENDERECO")
-    private int numero;
+    private String numero;
 
     @Column(name = "COMPLEMENTO_ENDERECO")
     private String complemento;

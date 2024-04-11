@@ -24,7 +24,7 @@ public class PessoaFisica {
     private Long id;
 
     @Column(name = "CPF_PESSOA_FISICA")
-    private int cpf;
+    private String cpf;
 
     @Column(name = "RG_PESSOA_FISICA")
     private  String rg;

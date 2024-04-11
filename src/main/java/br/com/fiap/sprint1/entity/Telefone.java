@@ -24,13 +24,13 @@ public class Telefone {
     private Long id;
 
     @Column(name = "DDI_TELEFONE")
-    private int ddi;
+    private String ddi;
 
     @Column(name = "DDD_TELEFONE")
-    private int ddd;
+    private String ddd;
 
     @Column(name = "NUM_TELEFONE")
-    private int numero;
+    private String numero;
 
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})

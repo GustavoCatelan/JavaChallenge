@@ -24,7 +24,7 @@ public class PessoaJuridica {
     private Long id;
 
     @Column(name = "CNPJ_PESSOA_JURIDICA")
-    private int cnpj;
+    private String cnpj;
 
     @Column(name = "NM_EMP_PESSOA_JURIDICA")
     private  String nomeEmpresa;

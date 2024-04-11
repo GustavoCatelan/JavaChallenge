@@ -33,10 +33,10 @@ public class PagamentoCartao {
     private String validade;
 
     @Column(name = "NUM_PAGAMENTO_CARTAO")
-    private int numero;
+    private String numero;
 
     @Column(name = "CVV_PAGAMENTO_CARTAO")
-    private int cvv;
+    private String cvv;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PAGAMENTO", referencedColumnName = "ID_PAGAMENTO")
