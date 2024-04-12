@@ -1,16 +1,16 @@
 Nome da aplicação: InovaTech
 
-Integrantes:
+Integrantes e Responsabilidade:
 
-Lucas dos Santos Lopes - RM550790 - Java,Advanced,Compliance,Banco de dados
+2TDSPJ - Lucas dos Santos Lopes - RM550790 - Java,Advanced,Compliance,Banco de dados
 
-Gustavo Catelan - RM551823 - Java,Advanced,Compliance,Banco de dados
+2TDSPJ - Gustavo Catelan - RM551823 - Java,Advanced,Compliance,Banco de dados
 
-Murilo Machado - RM550718 - Banco de Dados,Advanced,Compliance
+2TDSPJ - Murilo Machado - RM550718 - Banco de Dados,Advanced,Compliance
 
-Victor Taborda Rodrigues - RM97900 - Disruptive Architectures,DevOps,Compliance
+2TDSPJ - Victor Taborda Rodrigues - RM97900 - Disruptive Architectures,DevOps,Compliance
 
-Allan Percario - RM99903 - Mobile app development, banco de dados, Compliance
+2TDSPW - Allan Percario - RM99903 - Mobile app development, banco de dados, Compliance
 
 Instrução de como rodar a aplicação:
 - Clone o repositório do projeto InovaTech.
