@@ -85,7 +85,7 @@ public class UsuarioResource {
         return pessoaFisicaRepository.save(pf);
     }
 
-    @GetMapping(value = "/{id}/PessoaFisica")
+    @GetMapping(value = "/{id}/pessoaFisica")
     public List<PessoaFisica> findPessoaFisicaByUsuario(@PathVariable Long id) {
         return pessoaFisicaRepository.findByUsuarioId(id);
     }
