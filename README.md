@@ -1,9 +1,15 @@
 Nome da aplicação: InovaTech
+
 Integrantes:
+
 Lucas dos Santos Lopes - RM550790 - Java,Advanced,Compliance,Banco de dados
+
 Gustavo Catelan - RM551823 - Java,Advanced,Compliance,Banco de dados
+
 Murilo Machado - RM550718 - Banco de Dados,Advanced,Compliance
+
 Victor Taborda Rodrigues - RM97900 - Disruptive Architectures,DevOps,Compliance
+
 Allan Percario - RM99903 - Mobile app development, banco de dados, Compliance
 
 Instrução de como rodar a aplicação:
