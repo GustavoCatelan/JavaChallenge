@@ -34,26 +34,6 @@ public class Servico {
     @Column(name = "PRECO_SERVICO")
     private float preco;
 
-    @ManyToMany(
-            fetch = FetchType.EAGER,
-            cascade = {CascadeType.MERGE, CascadeType.PERSIST}
-    )
-    @JoinTable(
-            name = "DISTRIBUIDOR_SERVICO",
-            joinColumns = {
-                    @JoinColumn(
-                            name = "SERVICO",
-                            referencedColumnName = "ID_SERVICO",
-                            foreignKey = @ForeignKey(name = "FK_SERVICO_DISTRIBUIDOR"))
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(
-                            name = "DISTRIBUIDOR",
-                            referencedColumnName = "ID_DISTRIBUIDOR",
-                            foreignKey = @ForeignKey(name = "FK_DISTRIBUIODR_SERVICO"))
-            }
-    )
-    private Set<Distribuidor> distribuidor = new LinkedHashSet<>();
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(

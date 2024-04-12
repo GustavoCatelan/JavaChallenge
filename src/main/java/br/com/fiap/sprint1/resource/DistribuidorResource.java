@@ -75,35 +75,37 @@ public class DistribuidorResource {
 
     @Transactional
     @PostMapping(value = "/{id}/servico")
-    public Distribuidor save(@PathVariable Long id, @RequestBody Servico s) {
-        if (Objects.isNull(s)) return null;
-        Distribuidor distribuidor = repo.findById(id).orElseThrow();
-        if (Objects.nonNull(s.getId())) {
-            s = servicoRepository.findById(s.getId()).orElseThrow();
+    public Servico addServico(@PathVariable Long id, @RequestBody Servico s) {
+        if (Objects.isNull( s)) return null;
+        if (Objects.nonNull( s.getId() )) {
+            s = servicoRepository.findById( s.getId() ).orElseThrow();
         }
-        s.getDistribuidor().add(distribuidor);
-        return  repo.save(distribuidor);
+        Distribuidor distribuidor = repo.findById( id ).orElseThrow();
+        distribuidor.getServico().add( s );
+        return servicoRepository.save( s );
     }
 
     @GetMapping(value = "/{id}/servico")
-    public List<Servico> findServicoByDistribuidor(@PathVariable Long id) {
-        return servicoRepository.findByDistribuidorId(id);
+    public List<Servico> getServico(@PathVariable Long id) {
+        Distribuidor distribuidor = repo.findById( id ).orElseThrow();
+        return distribuidor.getServico().stream().toList();
     }
 
     @Transactional
     @PostMapping(value = "/{id}/produto")
-    public Distribuidor save(@PathVariable Long id, @RequestBody Produto p) {
-        if (Objects.isNull(p)) return null;
-        Distribuidor distribuidor = repo.findById(id).orElseThrow();
-        if (Objects.nonNull(p.getId())) {
-            p = produtoRepository.findById(p.getId()).orElseThrow();
+    public Produto addProduto(@PathVariable Long id, @RequestBody Produto p) {
+        if (Objects.isNull( p)) return null;
+        if (Objects.nonNull( p.getId() )) {
+            p = produtoRepository.findById( p.getId() ).orElseThrow();
         }
-        p.getDistribuidor().add(distribuidor);
-        return distribuidor;
+        Distribuidor distribuidor = repo.findById( id ).orElseThrow();
+        distribuidor.getProduto().add( p );
+        return produtoRepository.save( p );
     }
 
     @GetMapping(value = "/{id}/produto")
-    public List<Produto> findProdutoByUsuario(@PathVariable Long id) {
-        return produtoRepository.findByDistribuidorId(id);
+    public List<Produto> getProduto(@PathVariable Long id) {
+        Distribuidor distribuidor = repo.findById( id ).orElseThrow();
+        return distribuidor.getProduto().stream().toList();
     }
 }

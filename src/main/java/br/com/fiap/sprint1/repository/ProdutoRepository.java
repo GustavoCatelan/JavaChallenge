@@ -11,7 +11,5 @@ import java.util.List;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
-    List<Produto> findByDistribuidorId(Long id);
-
     List<Produto> findByAnaliseDadosId(Long id);
 }

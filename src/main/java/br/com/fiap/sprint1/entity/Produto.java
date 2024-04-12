@@ -37,28 +37,6 @@ public class Produto {
     @Column(name = "QUANT_PRODUTO")
     private int quantidade;
 
-
-    @ManyToMany(
-            fetch = FetchType.EAGER,
-            cascade = {CascadeType.MERGE, CascadeType.PERSIST}
-    )
-    @JoinTable(
-            name = "ACESSORIO_VEICULO",
-            joinColumns = {
-                    @JoinColumn(
-                            name = "PRODUTO",
-                            referencedColumnName = "ID_PRODUTO",
-                            foreignKey = @ForeignKey(name = "FK_PRODUTO_DISTRIBUIDOR"))
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(
-                            name = "DISTRIBUIDOR",
-                            referencedColumnName = "ID_DISTRIBUIDOR",
-                            foreignKey = @ForeignKey(name = "FK_DISTRIBUIDOR_PRODUTO"))
-            }
-    )
-    private Set<Distribuidor> distribuidor = new LinkedHashSet<>();
-
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
             name = "ANALISE_DADOS",
