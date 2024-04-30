@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.fiap</groupId>
-    <artifactId>Sprint1</artifactId>
+    <artifactId>JavaChallenge</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-pf-authentication</name>
     <description>spring-pf-authentication</description>
