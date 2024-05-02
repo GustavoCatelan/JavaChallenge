@@ -1,4 +1,4 @@
-package br.com.fiap.javaChallenge.entity;
+package br.com.fiap.javaChallenge.entity.produto;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,22 +14,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "TB_SERVICO")
-public class Servico {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_SERVICO")
-    @SequenceGenerator(name = "SQ_SERVICO", sequenceName = "SQ_SERVICO", allocationSize = 1)
-    @Column(name = "ID_SERVICO")
-    private Long id;
-
-    @Column(name = "NM_SERVICO")
-    private String nome;
-
-    @Column(name = "DESC_SERVICO")
-    private  String descricao;
-
-    @Column(name = "PRECO_SERVICO")
-    private float preco;
+public class Servico extends Negociavel{
 
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})

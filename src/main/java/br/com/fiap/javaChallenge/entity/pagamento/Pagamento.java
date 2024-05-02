@@ -1,4 +1,4 @@
-package br.com.fiap.javaChallenge.entity;
+package br.com.fiap.javaChallenge.entity.pagamento;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "TB_PAGAMENTO")
-public class Pagamento {
+public abstract class Pagamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_PAGAMENTO")

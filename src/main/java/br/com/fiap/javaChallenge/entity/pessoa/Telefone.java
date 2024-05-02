@@ -1,4 +1,4 @@
-package br.com.fiap.javaChallenge.entity;
+package br.com.fiap.javaChallenge.entity.pessoa;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,25 +32,14 @@ public class Telefone {
     @Column(name = "NUM_TELEFONE")
     private String numero;
 
-
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "DISTRIBUIDOR",
-            referencedColumnName = "ID_DISTRIBUIDOR",
+            name = "PESSOA",
+            referencedColumnName = "ID_PESSOA",
             foreignKey = @ForeignKey(
-                    name = "FK_TELEFONE_DISTRIBUIDOR"
+                    name = "FK_TELEFONE_PESSOA"
             )
     )
-    private Distribuidor distribuidor;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(
-            name = "USUARIO",
-            referencedColumnName = "ID_USUARIO",
-            foreignKey = @ForeignKey(
-                    name = "FK_TELEFONE_USUARIO"
-            )
-    )
-    private Usuario usuario;
+    private Pessoa pessoa;
 
 }

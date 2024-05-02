@@ -1,5 +1,7 @@
-package br.com.fiap.javaChallenge.entity;
+package br.com.fiap.javaChallenge.entity.compra;
 
+import br.com.fiap.sprint1.entity.pagamento.Pagamento;
+import br.com.fiap.sprint1.entity.pessoa.Pessoa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,21 +33,21 @@ public class Compra {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "USUARIO",
-            referencedColumnName = "ID_USUARIO",
+            name = "PESSOA",
+            referencedColumnName = "ID_PESSOA",
             foreignKey = @ForeignKey(
-                    name = "FK_COMPRA_USUARIO"
+                    name = "FK_COMPRA_PESSOA"
             )
     )
 
-    private Usuario usuario;
+    private Pessoa pessoa;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
             name = "PAGAMENTO",
             referencedColumnName = "ID_PAGAMENTO",
             foreignKey = @ForeignKey(
-                    name = "FK_COMPRA_PAGAMENTO"
+                    name = "FK_COMPRA_USUARIO"
             )
     )
 

@@ -1,5 +1,7 @@
-package br.com.fiap.javaChallenge.entity;
+package br.com.fiap.javaChallenge.entity.pessoa;
 
+import br.com.fiap.sprint1.entity.produto.Produto;
+import br.com.fiap.sprint1.entity.produto.Servico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,9 +26,6 @@ public class Distribuidor {
     @SequenceGenerator(name = "SQ_DISTRIBUIDOR", sequenceName = "SQ_DISTRIBUIDOR", allocationSize = 1)
     @Column(name = "ID_DISTRIBUIDOR")
     private Long id;
-
-    @Column(name = "NM_DISTRIBUIDOR")
-    private String nome;
 
     @Column(name = "AREA_COBER_DISTRIBUIDOR")
     private  String areaCobertura;
@@ -78,4 +77,14 @@ public class Distribuidor {
             }
     )
     private Set<Produto> produto = new LinkedHashSet<>();
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "PESSOA",
+            referencedColumnName = "ID_PESSOA",
+            foreignKey = @ForeignKey(
+                    name = "FK_DISTRIBUIDOR_PESSOA"
+            )
+    )
+    private Pessoa pessoa;
 }

@@ -1,4 +1,4 @@
-package br.com.fiap.javaChallenge.entity;
+package br.com.fiap.javaChallenge.entity.pessoa;
 
 
 import jakarta.persistence.*;
@@ -46,24 +46,13 @@ public class Endereco {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "USUARIO",
-            referencedColumnName = "ID_USUARIO",
+            name = "PESSOA",
+            referencedColumnName = "ID_PESSOA",
             foreignKey = @ForeignKey(
-                    name = "FK_ENDERECO_USUARIO"
+                    name = "FK_ENDERECO_PESSOA"
             )
     )
-    private Usuario usuario;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(
-            name = "DISTRIBUIDOR",
-            referencedColumnName = "ID_DISTRIBUIDOR",
-            foreignKey = @ForeignKey(
-                    name = "FK_ENDERECO_DISTRIBUIDOR"
-            )
-    )
-
-    private Distribuidor distribuidor;
+    private Pessoa pessoa;
 
 
 }

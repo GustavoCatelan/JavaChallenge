@@ -1,4 +1,4 @@
-package br.com.fiap.javaChallenge.entity;
+package br.com.fiap.javaChallenge.entity.pagamento;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
