@@ -1,5 +1,6 @@
 package br.com.fiap.javaChallenge.entity.produto;
 
+import br.com.fiap.javaChallenge.entity.analise.Avaliacao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,12 +20,12 @@ public class Servico extends Negociavel{
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "ANALISE_DADOS",
-            referencedColumnName = "ID_ANALISE_DADOS",
+            name = "AVALIACAO",
+            referencedColumnName = "ID_AVALIACAO",
             foreignKey = @ForeignKey(
-                    name = "FK_SERVICO_ANALISE_DADOS"
+                    name = "FK_SERVICO_AVALIACAO"
             )
     )
-    private AnaliseDados analiseDados;
+    private Avaliacao avaliacao;
 
 }

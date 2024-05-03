@@ -1,7 +1,7 @@
 package br.com.fiap.javaChallenge.entity.compra;
 
-import br.com.fiap.sprint1.entity.pagamento.Pagamento;
-import br.com.fiap.sprint1.entity.pessoa.Pessoa;
+import br.com.fiap.javaChallenge.entity.pagamento.Pagamento;
+import br.com.fiap.javaChallenge.entity.pessoa.Pessoa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

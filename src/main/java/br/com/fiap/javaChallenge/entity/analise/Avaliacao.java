@@ -1,6 +1,6 @@
 package br.com.fiap.javaChallenge.entity.analise;
 
-import br.com.fiap.sprint1.entity.produto.Negociavel;
+import br.com.fiap.javaChallenge.entity.produto.Negociavel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
