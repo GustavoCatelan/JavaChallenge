@@ -19,12 +19,13 @@ import java.util.Set;
 
 @Entity
 @Table(name = "TB_DISTRIBUIDOR")
-public class Distribuidor {
+public class Distribuidor{
+
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DISTRIBUIDOR")
-    @SequenceGenerator(name = "SQ_DISTRIBUIDOR", sequenceName = "SQ_DISTRIBUIDOR", allocationSize = 1)
-    @Column(name = "ID_DISTRIBUIDOR")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_PESSOA")
+    @SequenceGenerator(name = "SQ_PESSOA", sequenceName = "SQ_PESSOA", allocationSize = 1)
+    @Column(name = "ID_PESSOA")
     private Long id;
 
     @Column(name = "AREA_COBER_DISTRIBUIDOR")

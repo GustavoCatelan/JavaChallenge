@@ -1,7 +1,6 @@
 package br.com.fiap.javaChallenge.resource;
 
-import br.com.fiap.javaChallenge.entity.*;
-import br.com.fiap.javaChallenge.repository.*;
+import br.com.fiap.javaChallenge.repository.pessoa.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;

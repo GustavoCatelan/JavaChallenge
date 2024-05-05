@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "TB_PESSOA_FISICA")
 public class PessoaFisica extends Pessoa {
 
-
     @Column(name = "CPF_PESSOA_FISICA")
     private String cpf;
 

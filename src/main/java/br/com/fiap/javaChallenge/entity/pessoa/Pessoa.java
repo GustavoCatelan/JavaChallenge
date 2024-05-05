@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name = "TB_PESSOA")
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "TB_PESSOA")
 public abstract class Pessoa {
 
     @Id
@@ -23,6 +23,7 @@ public abstract class Pessoa {
     @Column(name = "ID_PESSOA")
     private Long id;
 
+    @Column(name = "NM_PESSOA")
     private String nome;
 
 

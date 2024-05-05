@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name = "TB_NEGOCIAVEL")
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "TB_NEGOCIAVEL")
 public abstract class Negociavel {
 
     @Id
