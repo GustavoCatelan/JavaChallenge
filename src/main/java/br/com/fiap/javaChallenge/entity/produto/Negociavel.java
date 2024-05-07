@@ -5,17 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-
+@SuperBuilder
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "TB_NEGOCIAVEL")
-public abstract class Negociavel {
+public class Negociavel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_NEGOCIAVEL")
@@ -27,7 +27,7 @@ public abstract class Negociavel {
     private String nome;
 
     @Column(name = "DESC_NEGOCIAVEL")
-    private  String descricao;
+    private String descricao;
 
     @Column(name = "PRECO_NEGOCIAVEL")
     private float preco;

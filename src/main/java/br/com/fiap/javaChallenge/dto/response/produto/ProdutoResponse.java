@@ -6,6 +6,14 @@ import lombok.Builder;
 @Builder
 public record ProdutoResponse(
 
+        Long id,
+
+        String nome,
+
+        String descricao,
+
+        float preco,
+
         int quantidade,
 
         AvaliacaoResponse avaliacao
