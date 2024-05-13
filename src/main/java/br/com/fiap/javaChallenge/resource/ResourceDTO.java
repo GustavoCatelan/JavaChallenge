@@ -2,7 +2,7 @@ package br.com.fiap.javaChallenge.resource;
 
 import org.springframework.http.ResponseEntity;
 
-public interface ResourceDTO<Entity, Request, Response> {
+public interface ResourceDTO< Request, Response> {
 
     ResponseEntity<Response> findById(Long id);
 
