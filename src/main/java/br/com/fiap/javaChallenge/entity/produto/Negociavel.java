@@ -30,5 +30,5 @@ public class Negociavel {
     private String descricao;
 
     @Column(name = "PRECO_NEGOCIAVEL")
-    private float preco;
+    private Float preco;
 }

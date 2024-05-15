@@ -3,6 +3,8 @@ package br.com.fiap.javaChallenge.resource.produto;
 import br.com.fiap.javaChallenge.dto.request.produto.NegociavelRequest;
 import br.com.fiap.javaChallenge.dto.response.produto.NegociavelResponse;
 import br.com.fiap.javaChallenge.entity.produto.Negociavel;
+import br.com.fiap.javaChallenge.repository.produto.ProdutoRepository;
+import br.com.fiap.javaChallenge.repository.produto.ServicoRepository;
 import br.com.fiap.javaChallenge.resource.ResourceDTO;
 import br.com.fiap.javaChallenge.service.produto.NegociavelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,17 @@ public class NegociavelResource implements ResourceDTO<NegociavelRequest, Negoci
     @Autowired
     private NegociavelService service;
 
+    @Autowired
+    private ProdutoRepository produtoRepository;
+
+    @Autowired
+    private ServicoRepository servicoRepository;
+
     @GetMapping
     public ResponseEntity<Collection<NegociavelResponse>> findAll(
             @RequestParam(name = "nome", required = false) String nome,
             @RequestParam(name = "descricao", required = false) String descricao,
-            @RequestParam(name = "preco", required = false) float preco
+            @RequestParam(name = "preco", required = false) Float preco
 
     ) {
         var negociavel = Negociavel.builder()

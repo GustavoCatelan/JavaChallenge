@@ -15,7 +15,7 @@ import java.util.Collection;
 public class NegociavelService implements ServiceDTO<Negociavel ,NegociavelRequest, NegociavelResponse> {
 
     @Autowired
-    private static NegociavelRespository repo;
+    private NegociavelRespository repo;
 
     @Override
     public Collection<Negociavel> findAll(Example<Negociavel> example){

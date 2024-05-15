@@ -25,12 +25,6 @@ public class DistribuidorResource implements ResourceDTO<DistribuidorRequest, Di
     @Autowired
     private DistribuidorService service;
 
-    @Autowired
-    private ProdutoRepository produtoRepository;
-
-    @Autowired
-    private ServicoRepository servicoRepository;
-
     @GetMapping
     public ResponseEntity<Collection<DistribuidorResponse>> findAll(
             @RequestParam(name = "areaCobertura", required = false) String areaCobertura,

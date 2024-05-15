@@ -11,6 +11,6 @@ public record NegociavelResponse(
 
         String descricao,
 
-        float preco
+        Float preco
 ) {
 }
