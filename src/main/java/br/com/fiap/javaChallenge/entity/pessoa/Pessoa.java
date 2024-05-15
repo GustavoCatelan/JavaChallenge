@@ -24,9 +24,7 @@ public class Pessoa {
     @Column(name = "ID_PESSOA")
     private Long id;
 
+    @Column(name = "NM_PESSOA")
     private String nome;
-
-
-
 
 }

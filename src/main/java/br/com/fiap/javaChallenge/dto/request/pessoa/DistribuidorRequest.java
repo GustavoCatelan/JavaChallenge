@@ -4,8 +4,6 @@ import br.com.fiap.javaChallenge.dto.request.AbstractRequest;
 
 public record DistribuidorRequest(
 
-        String nome,
-
         String areaCobertura,
 
         String localizacao,
