@@ -12,7 +12,7 @@ public record ServicoResponse(
 
         String descricao,
 
-        float preco,
+        Float preco,
 
         AvaliacaoResponse avaliacao
 ) {

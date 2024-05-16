@@ -8,7 +8,7 @@ public record ServicoRequest(
 
         String descricao,
 
-        float preco,
+        Float preco,
 
         AbstractRequest avaliacao
 ) {

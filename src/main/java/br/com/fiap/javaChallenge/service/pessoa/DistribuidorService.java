@@ -2,6 +2,8 @@ package br.com.fiap.javaChallenge.service.pessoa;
 
 import br.com.fiap.javaChallenge.dto.request.pessoa.DistribuidorRequest;
 import br.com.fiap.javaChallenge.dto.response.pessoa.DistribuidorResponse;
+import br.com.fiap.javaChallenge.dto.response.produto.ProdutoResponse;
+import br.com.fiap.javaChallenge.dto.response.produto.ServicoResponse;
 import br.com.fiap.javaChallenge.entity.pessoa.Distribuidor;
 import br.com.fiap.javaChallenge.repository.pessoa.DistribuidorRepository;
 import br.com.fiap.javaChallenge.service.ServiceDTO;
@@ -13,6 +15,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Objects;
 
 @Service
 public class DistribuidorService implements ServiceDTO<Distribuidor, DistribuidorRequest, DistribuidorResponse> {
@@ -62,9 +65,15 @@ public class DistribuidorService implements ServiceDTO<Distribuidor, Distribuido
 
         var pessoa = pessoaService.toResponse(e.getPessoa());
 
-        var produto = e.getProduto().stream().map(produtoService::toResponse).toList();
+        Collection<ProdutoResponse> produto = null;
 
-        var servico = e.getServico().stream().map(servicoService::toResponse).toList();
+        if (Objects.nonNull(e.getProduto()) && !e.getProduto().isEmpty())
+            produto = e.getProduto().stream().map(produtoService::toResponse).toList();
+
+        Collection<ServicoResponse> servico = null;
+
+        if (Objects.nonNull(e.getServico()) && !e.getServico().isEmpty())
+            servico = e.getServico().stream().map(servicoService::toResponse).toList();
 
         return DistribuidorResponse.builder()
                 .id(e.getId())

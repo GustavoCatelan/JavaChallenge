@@ -19,7 +19,7 @@ import lombok.experimental.SuperBuilder;
 public class Produto extends Negociavel{
 
     @Column(name = "QUANT_PRODUTO")
-    private int quantidade;
+    private Integer quantidade;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(

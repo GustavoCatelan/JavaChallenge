@@ -8,9 +8,9 @@ public record ProdutoRequest (
 
         String descricao,
 
-        float preco,
+        Float preco,
 
-        int quantidade,
+        Integer quantidade,
 
         AbstractRequest avaliacao
 ){

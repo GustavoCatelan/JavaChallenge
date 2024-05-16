@@ -3,8 +3,6 @@ package br.com.fiap.javaChallenge.resource.pessoa;
 import br.com.fiap.javaChallenge.dto.request.pessoa.DistribuidorRequest;
 import br.com.fiap.javaChallenge.dto.response.pessoa.DistribuidorResponse;
 import br.com.fiap.javaChallenge.entity.pessoa.Distribuidor;
-import br.com.fiap.javaChallenge.repository.produto.ProdutoRepository;
-import br.com.fiap.javaChallenge.repository.produto.ServicoRepository;
 import br.com.fiap.javaChallenge.resource.ResourceDTO;
 import br.com.fiap.javaChallenge.service.pessoa.DistribuidorService;
 import org.springframework.beans.factory.annotation.Autowired;

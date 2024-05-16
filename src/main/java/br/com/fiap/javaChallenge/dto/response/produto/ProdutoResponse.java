@@ -12,9 +12,9 @@ public record ProdutoResponse(
 
         String descricao,
 
-        float preco,
+        Float preco,
 
-        int quantidade,
+        Integer quantidade,
 
         AvaliacaoResponse avaliacao
 ) {
