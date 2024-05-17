@@ -27,227 +27,533 @@ Para inserir dados:
 
 
 Diagrama de Entidade e Relacionamento
-![image](https://github.com/GustavoCatelan/JavaChallenge/assets/127765306/9b27c6f8-56f5-4ae9-971e-8c44dc2cb1a0)
+![image](![image](https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/bf7f9d93-b5fe-459f-90d8-ef643d6b2c08)
+)
 
 Diagrama de Classe das Entidades
-![image](https://github.com/GustavoCatelan/JavaChallenge/assets/127765306/ab5a381b-a173-461c-b02d-14c16ac143c9)
+![image](<img width="335" alt="Captura de Tela 2024-05-17 às 17 21 43" src="https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/5f4d3eb6-2c90-4623-9734-7823a1b26c57">
+)
+
+![image](<img width="887" alt="Captura de Tela 2024-05-17 às 17 22 10" src="https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/0cab48fc-ad4f-4558-b0a9-7b41f481eb7e">
+)
+
+![image](<img width="624" alt="Captura de Tela 2024-05-17 às 17 22 34" src="https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/1da6965b-1dc1-4bb6-8994-7ac01c5ec959">
+)
 
 Link do video:
 https://www.youtube.com/watch?v=pQHLYtz-2F0
 
 Listagem de todos os endpoints:
-
-TODOS OS POST:
-
-POST http://localhost:80/analiseDados
-Content-Type: application/json
 {
-  "avaliacoes": "Otimo",
-  "numeroCompra": "04845654",
-  "recomendacoes": "Nenhuma",
-  "tipo": "Custo beneficio",
-  "data": "21/02/2005"
-}
-
-POST http://localhost:80/analiseDados/{{id}}/produto
-Content-Type: application/json
-
-{
-  "nome": "airfryer",
-  "descricao": "A Air Fryer eos 4 Litros é uma opção prática e eficiente para cozinhar.
-Com capacidade interna de 4 litros, é ideal para porções generosas.
-Possui tecnologia Turbo Twist AirFryer para um cozimento mais rápido, sistema antiaderente MaxxiClean para facilitar a limpeza e frita sem óleo, promovendo uma opção saudável.
-Conta com sistema de proteção para evitar a queda acidental do cesto interno, timer programável e temperatura ajustável de até 200°C.
-Com potência de 1.500W, é compacta e possui um cesto de 3,5 litros de capacidade útil e 4 litros de capacidade total.",
-  "preco": 227.74,
-  "quantidade": 15
-}
-
-POST http://localhost:80/analiseDados/{{id}}/servico
-Content-Type: application/json
-
-{
-  "nome": "Limpeza de dados",
-  "descricao": "Serviço de limpeza e organização de dados para análise",
-  "preco": 500.00,
- }
-
- POST http://localhost:80/distribuidor
-Content-Type: application/json
-
-{
-  "nome": "Roberto Alvarez",
-  "areaCobertura": "Zona Leste",
-  "localizacao": "Vila Formosa",
-  "tipo": "Consultoria"
-}
-
-POST http://localhost:80/distribuidor/{{id}}/endereco
-Content-Type: application/json
-
-{
-  "cep":  12345678,
-  "logradouro": "Rua das Flores",
-  "numero": 100,
-  "complemento": "Apto 101",
-  "bairro": "Centro",
-  "cidade": "São Paulo",
-  "estado": "SP"
-}
-
-POST http://localhost:80/distribuidor/{{id}}/produto
-Content-Type: application/json
-
-{
-  "nome": "Iphone 14",
-  "descricao": "O mais novo celular da Apple",
-  "preco": 5500,
-  "quantidade": 3
-}
-
-POST http://localhost:80/distribuidor/{{id}}/servico
-Content-Type: application/json
-
-{
-  "nome": "Convenio NotreDame",
-  "descricao": "Um convenio para uso do serviço da NotreDame",
-  "preco": 2500.90
-}
-
-POST http://localhost/distribuidor/{{id}}/telefone
-Content-Type: application/json
-
-{
-  "ddi": 55,
-  "ddd": 11,
-  "numero": 987654321
-}
-
-POST http://localhost/usuario
-Content-Type: application/json
-
-{
-  "nome": "Carlos Ferreira",
-  "email": "carlosferreira@fastshop.com",
-  "assinatura": "Plano Básico"
-}
-
-POST http://localhost/usuario/{{id}}/compra
-Content-Type: application/json
-
-{
-  "valorTotal": 150,
-  "status": "Concluida"
-}
-
-POST http://localhost/usuario/{{id}}/endereco
-Content-Type: application/json
-
-{
-  "cep": 45678901,
-  "logradouro": "Rua do Bosque",
-  "numero": 400,
-  "complemento": "Sala 302",
-  "bairro": "Centro",
-  "cidade": "Belo Horizonte",
-  "estado": "MG"
-}
-
-POST http://localhost/usuario/{{id}}/pessoaFisica
-Content-Type: application/json
-
-{
-  "cpf": 12345674300,
-  "rg": "123456789"
-}
-
-POST http://localhost/usuario/{{id}}/pessoaJuridica
-Content-Type: application/json
-
-{
-  "cnpj": 12345678901234,
-  "nomeEmpresa": "Unimed",
-  "nomeFantasia": "Unimed São Paulo",
-  "naturezaJuridica": "Médicas",
-  "situacao": "Ativa"
-}
-
-POST http://localhost/usuario/{{id}}/telefone
-Content-Type: application/json
-
-{
-  "ddi": 55,
-  "ddd": 11,
-  "numero": 987654321
-}
-
-POST http://localhost/pagamento
-Content-Type: application/json
-
-{
-  "metodo": "Cartão de Crédito",
-  "status": "Concluído"
-}
-
-POST http://localhost/pagamento/{{id}}/compra
-Content-Type: application/json
-
-{
-  "valorTotal": 70.00,
-  "status": "Pendente"
-}
-
-POST http://localhost/pagamento/{{id}}/pagamentoCartao
-Content-Type: application/json
-
-{
-  "tipo": "Debito",
-  "bandeira": "Visa",
-  "validade": "05/26",
-  "numero": 1234567890123456,
-  "cvv": 123
-}
-
-TODOS OS GETS:
-
-GET http://localhost:80/analiseDados
-
-GET http://localhost:80/analiseDados/{{id}}
-
-GET http://localhost:80/analiseDados/{{id}}/produto
-
-GET http://localhost:80/analiseDados/{{id}}/servico
-
-GET http://localhost:80/distribuidor
-
-GET http://localhost:80/distribuidor/{{id}}
-
-GET http://localhost:80/distribuidor/{{id}}/endereco
-
-GET http://localhost:80/distribuidor/{{id}}/produto
-
-GET http://localhost:80/distribuidor/{{id}}/servico
-
-GET http://localhost:80/distribuidor/{{id}}/telefone
-
-GET http://localhost:80/usuario
-
-GET http://localhost:80/usuario/{{id}}
-
-GET http://localhost:80/usuario/{{id}}/PessoaFisica
-
-GET http://localhost:80/usuario/{{id}}/PessoaJuridica
-
-GET http://localhost:80/usuario/{{id}}/compra
-
-GET http://localhost:80/usuario/{{id}}/endereco
-
-GET http://localhost:80/usuario/{{id}}/telefone
-
-GET http://localhost:80/pagamento
-
-GET http://localhost:80/pagamento/{{id}}
-
-GET http://localhost:80/pagamento/{{id}}/compra
-
-GET http://localhost:80/pagamento/{{id}}/pagamentoCartao
+			"name": "localhost/negociavel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Iphone 11\",\n    \"descricao\": \"Celular seminovo\",\n    \"preco\": 2000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Iphone 11\",\n    \"descricao\": \"Celular seminovo\",\n    \"preco\": 2000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/avaliacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"texto\": \"promoçâo\",\n    \"data\": \"2024-05-15\",\n    \"negociavel\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/avaliacao",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"avaliacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/avaliacao",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"texto\": \"promoçâo\",\n    \"data\": \"2024-05-15\",\n    \"negociavel\": {\n        \"id\": 7\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/avaliacao",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"avaliacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Gustavo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaFisica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cpf\": \"73674738994\",\n  \"rg\": \"46738993\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/pessoaFisica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaFisica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaFisica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/pessoaFisica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaFisica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaJuridica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cnpj\": \"3739939333\",\n  \"nomeFantasia\": \"Gugu LTDA\",\n  \"naturezaJuridica\": \"aprovada\",\n  \"situacao\": \"intenso\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/pessoaJuridica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaJuridica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaJuridica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/pessoaJuridica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaJuridica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/telefone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ddi\": \"55\",\n  \"ddd\": \"11\",\n  \"numero\": \"962902444\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/1/telefone",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"telefone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/telefone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/1/telefone",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"telefone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/endereco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cep\": \"03361010\",\n  \"logradouro\": \"Av. Cipriano Rodrigues\",\n  \"numero\": \"340\",\n  \"complemento\": \"Travessa João XVIII\",\n  \"bairro\": \"Vila Formosa\",\n  \"cidade\": \"São Paulo\",\n  \"estado\": \"São Paulo\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/1/endereco",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"endereco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/endereco",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/1/endereco",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"endereco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/distribuidor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"areaCobertura\": \"Zona Leste\",\n  \"localizacao\": \"Av. Paulista\",\n  \"tipo\": \"Varejo\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/distribuidor",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"distribuidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/distribuidor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/distribuidor",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"distribuidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"XxGu\",\n  \"password\": \"Corinthians2000\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"quantidade\": 5,\n  \"avaliacao\": {\n    \"id\": 4\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel/produto",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/negociavel/produto",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/servico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"avaliacao\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel/servico",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"servico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/servico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/negociavel/servico",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"servico"
+					]
+				}
+			},
+			"response": []
+		}
