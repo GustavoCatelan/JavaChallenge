@@ -5,10 +5,7 @@ import lombok.Builder;
 @Builder
 public record PessoaFisicaResponse(
 
-
         Long id,
-
-        String nome,
 
         String cpf,
 

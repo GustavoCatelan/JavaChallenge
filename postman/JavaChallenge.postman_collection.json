@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "88c9de9a-86a4-4f79-8be4-ee4a06f8ad84",
+		"name": "JavaChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30750852"
+	},
+	"item": [
+		{
+			"name": "localhost/negociavel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Iphone 11\",\n    \"descricao\": \"Celular seminovo\",\n    \"preco\": 2000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Iphone 11\",\n    \"descricao\": \"Celular seminovo\",\n    \"preco\": 2000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/avaliacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"texto\": \"promoçâo\",\n    \"data\": \"2024-05-15\",\n    \"negociavel\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/avaliacao",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"avaliacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/avaliacao",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"texto\": \"promoçâo\",\n    \"data\": \"2024-05-15\",\n    \"negociavel\": {\n        \"id\": 7\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/avaliacao",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"avaliacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Gustavo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaFisica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cpf\": \"73674738994\",\n  \"rg\": \"46738993\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/pessoaFisica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaFisica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaFisica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/pessoaFisica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaFisica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaJuridica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cnpj\": \"3739939333\",\n  \"nomeFantasia\": \"Gugu LTDA\",\n  \"naturezaJuridica\": \"aprovada\",\n  \"situacao\": \"intenso\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/pessoaJuridica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaJuridica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/pessoaJuridica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/pessoaJuridica",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"pessoaJuridica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/telefone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ddi\": \"55\",\n  \"ddd\": \"11\",\n  \"numero\": \"962902444\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/1/telefone",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"telefone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/telefone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/1/telefone",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"telefone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/endereco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cep\": \"03361010\",\n  \"logradouro\": \"Av. Cipriano Rodrigues\",\n  \"numero\": \"340\",\n  \"complemento\": \"Travessa João XVIII\",\n  \"bairro\": \"Vila Formosa\",\n  \"cidade\": \"São Paulo\",\n  \"estado\": \"São Paulo\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/pessoa/1/endereco",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"endereco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/pessoa/1/endereco",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/pessoa/1/endereco",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"pessoa",
+						"1",
+						"endereco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/distribuidor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"areaCobertura\": \"Zona Leste\",\n  \"localizacao\": \"Av. Paulista\",\n  \"tipo\": \"Varejo\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/distribuidor",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"distribuidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/distribuidor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/distribuidor",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"distribuidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"XxGu\",\n  \"password\": \"Corinthians2000\",\n  \"pessoa\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"quantidade\": 5,\n  \"avaliacao\": {\n    \"id\": 4\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel/produto",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/negociavel/produto",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/servico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"avaliacao\": {\n    \"id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/negociavel/servico",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"servico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/negociavel/servico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/negociavel/servico",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"negociavel",
+						"servico"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

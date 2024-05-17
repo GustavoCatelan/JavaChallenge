@@ -48,7 +48,6 @@ public class PessoaJuridicaService implements ServiceDTO<PessoaJuridica, PessoaJ
 
         return PessoaJuridicaResponse.builder()
                 .id(e.getId())
-                .nome(e.getNome())
                 .cnpj(e.getCnpj())
                 .nomeFantasia(e.getNomeFantasia())
                 .naturezaJuridica(e.getNaturezaJuridica())

@@ -7,8 +7,6 @@ public record PessoaJuridicaResponse(
 
         Long id,
 
-        String nome,
-
         String cnpj,
 
         String nomeFantasia,

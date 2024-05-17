@@ -47,7 +47,6 @@ public class PessoaFisicaService implements ServiceDTO<PessoaFisica, PessoaFisic
 
         return PessoaFisicaResponse.builder()
                 .id(e.getId())
-                .nome(e.getNome())
                 .cpf(e.getCpf())
                 .rg(e.getRg())
                 .build();
