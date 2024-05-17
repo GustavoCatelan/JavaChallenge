@@ -37,7 +37,6 @@ public class PessoaFisicaService implements ServiceDTO<PessoaFisica, PessoaFisic
     public PessoaFisica toEntity(PessoaFisicaRequest dto) {
 
         return PessoaFisica.builder()
-                .nome(dto.nome())
                 .cpf(dto.cpf())
                 .rg(dto.rg())
                 .build();

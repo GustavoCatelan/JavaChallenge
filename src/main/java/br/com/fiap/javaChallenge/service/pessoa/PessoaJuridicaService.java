@@ -36,7 +36,6 @@ public class PessoaJuridicaService implements ServiceDTO<PessoaJuridica, PessoaJ
     public PessoaJuridica toEntity(PessoaJuridicaRequest dto) {
 
         return PessoaJuridica.builder()
-                .nome(dto.nome())
                 .cnpj(dto.cnpj())
                 .nomeFantasia(dto.nomeFantasia())
                 .naturezaJuridica(dto.naturezaJuridica())

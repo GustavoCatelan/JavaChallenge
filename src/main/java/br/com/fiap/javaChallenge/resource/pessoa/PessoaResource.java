@@ -1,18 +1,12 @@
 package br.com.fiap.javaChallenge.resource.pessoa;
 
-import br.com.fiap.javaChallenge.dto.request.pessoa.PessoaFisicaRequest;
-import br.com.fiap.javaChallenge.dto.request.pessoa.PessoaJuridicaRequest;
-import br.com.fiap.javaChallenge.dto.request.pessoa.PessoaRequest;
+import br.com.fiap.javaChallenge.dto.request.pessoa.*;
 import br.com.fiap.javaChallenge.dto.request.produto.ProdutoRequest;
 import br.com.fiap.javaChallenge.dto.request.produto.ServicoRequest;
-import br.com.fiap.javaChallenge.dto.response.pessoa.PessoaFisicaResponse;
-import br.com.fiap.javaChallenge.dto.response.pessoa.PessoaJuridicaResponse;
-import br.com.fiap.javaChallenge.dto.response.pessoa.PessoaResponse;
+import br.com.fiap.javaChallenge.dto.response.pessoa.*;
 import br.com.fiap.javaChallenge.dto.response.produto.ProdutoResponse;
 import br.com.fiap.javaChallenge.dto.response.produto.ServicoResponse;
-import br.com.fiap.javaChallenge.entity.pessoa.Pessoa;
-import br.com.fiap.javaChallenge.entity.pessoa.PessoaFisica;
-import br.com.fiap.javaChallenge.entity.pessoa.PessoaJuridica;
+import br.com.fiap.javaChallenge.entity.pessoa.*;
 import br.com.fiap.javaChallenge.entity.produto.Produto;
 import br.com.fiap.javaChallenge.entity.produto.Servico;
 import br.com.fiap.javaChallenge.repository.pessoa.EnderecoRepository;
@@ -20,9 +14,7 @@ import br.com.fiap.javaChallenge.repository.pessoa.PessoaFisicaRepository;
 import br.com.fiap.javaChallenge.repository.pessoa.PessoaJuridicaRepository;
 import br.com.fiap.javaChallenge.repository.pessoa.TelefoneRepository;
 import br.com.fiap.javaChallenge.resource.ResourceDTO;
-import br.com.fiap.javaChallenge.service.pessoa.PessoaFisicaService;
-import br.com.fiap.javaChallenge.service.pessoa.PessoaJuridicaService;
-import br.com.fiap.javaChallenge.service.pessoa.PessoaService;
+import br.com.fiap.javaChallenge.service.pessoa.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -31,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -48,10 +41,10 @@ public class PessoaResource implements ResourceDTO<PessoaRequest, PessoaResponse
     private PessoaJuridicaService pessoaJuridicaService;
 
     @Autowired
-    private EnderecoRepository enderecoRepository;
+    private EnderecoService enderecoService;
 
     @Autowired
-    private TelefoneRepository telefoneRepository;
+    private TelefoneService telefoneService;
 
     @GetMapping
     public ResponseEntity<Collection<PessoaResponse>> findAll(
@@ -224,5 +217,67 @@ public class PessoaResource implements ResourceDTO<PessoaRequest, PessoaResponse
 
         return ResponseEntity.created(uri).body(response);
 
+    }
+
+    @GetMapping(value = "/{id}/telefone")
+    public ResponseEntity<TelefoneResponse> findTelefoneByPessoa(@PathVariable Long id) {
+        var telefone = telefoneService.findById(id);
+        var response = telefoneService.toResponse(telefone);
+        return ResponseEntity.ok(response);
+    }
+
+    @Transactional
+    @PostMapping(value = "/{id}/telefone")
+    public ResponseEntity<TelefoneResponse> save(@PathVariable Long id, @RequestBody TelefoneRequest telefone) {
+
+        Pessoa pessoa = service.findById(id);
+
+        if (Objects.isNull(telefone)) return ResponseEntity.badRequest().build();
+
+        var entity = telefoneService.toEntity(telefone);
+
+        entity.setPessoa(pessoa);
+
+        Telefone saved = telefoneService.save(entity);
+        var response = telefoneService.toResponse(saved);
+
+        URI uri = ServletUriComponentsBuilder
+                .fromCurrentRequestUri()
+                .path("/{id}")
+                .buildAndExpand(saved.getId())
+                .toUri();
+
+        return ResponseEntity.created(uri).body(response);
+    }
+
+    @GetMapping(value = "/{id}/endereco")
+    public ResponseEntity<EnderecoResponse> findEnderecoByPessoa(@PathVariable Long id) {
+        var endereco = enderecoService.findById(id);
+        var response = enderecoService.toResponse(endereco);
+        return ResponseEntity.ok(response);
+    }
+
+    @Transactional
+    @PostMapping(value = "/{id}/endereco")
+    public ResponseEntity<EnderecoResponse> save(@PathVariable Long id, @RequestBody EnderecoRequest endereco) {
+
+        Pessoa pessoa = service.findById(id);
+
+        if (Objects.isNull(endereco)) return ResponseEntity.badRequest().build();
+
+        var entity = enderecoService.toEntity(endereco);
+
+        entity.setPessoa(pessoa);
+
+        Endereco saved = enderecoService.save(entity);
+        var response = enderecoService.toResponse(saved);
+
+        URI uri = ServletUriComponentsBuilder
+                .fromCurrentRequestUri()
+                .path("/{id}")
+                .buildAndExpand(saved.getId())
+                .toUri();
+
+        return ResponseEntity.created(uri).body(response);
     }
 }

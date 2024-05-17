@@ -42,9 +42,6 @@ public class ProdutoService implements ServiceDTO<Produto, ProdutoRequest, Produ
         var avaliacao = avaliacaoService.findById(dto.avaliacao().id());
 
         return Produto.builder()
-                .nome(dto.nome())
-                .descricao(dto.descricao())
-                .preco(dto.preco())
                 .quantidade(dto.quantidade())
                 .avaliacao(avaliacao)
                 .build();

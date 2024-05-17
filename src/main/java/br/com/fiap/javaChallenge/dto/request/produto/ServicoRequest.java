@@ -4,12 +4,6 @@ import br.com.fiap.javaChallenge.dto.request.AbstractRequest;
 
 public record ServicoRequest(
 
-        String nome,
-
-        String descricao,
-
-        Float preco,
-
         AbstractRequest avaliacao
 ) {
 }

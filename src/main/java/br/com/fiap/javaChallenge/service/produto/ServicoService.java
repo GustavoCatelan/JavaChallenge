@@ -45,9 +45,6 @@ public class ServicoService implements ServiceDTO<Servico, ServicoRequest, Servi
         var avaliacao = avaliacaoService.findById(dto.avaliacao().id());
 
         return Servico.builder()
-                .nome(dto.nome())
-                .descricao(dto.descricao())
-                .preco(dto.preco())
                 .avaliacao(avaliacao)
                 .build();
     }
