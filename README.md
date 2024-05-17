@@ -27,18 +27,16 @@ Para inserir dados:
 
 
 Diagrama de Entidade e Relacionamento
-![image](![image](https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/bf7f9d93-b5fe-459f-90d8-ef643d6b2c08)
-)
+![Imagem do WhatsApp de 2024-05-17 à(s) 17 30 48_86755407](https://github.com/GustavoCatelan/JavaChallenge/assets/127765306/696001b0-f929-4384-b91c-a50611f9759b)
+
 
 Diagrama de Classe das Entidades
-![image](<img width="335" alt="Captura de Tela 2024-05-17 às 17 21 43" src="https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/5f4d3eb6-2c90-4623-9734-7823a1b26c57">
-)
+![image](https://github.com/GustavoCatelan/JavaChallenge/assets/127765306/74b62abd-41ad-4430-8611-e07883ab3bf8)
 
-![image](<img width="887" alt="Captura de Tela 2024-05-17 às 17 22 10" src="https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/0cab48fc-ad4f-4558-b0a9-7b41f481eb7e">
-)
+![image](https://github.com/GustavoCatelan/JavaChallenge/assets/127765306/2352908f-4c19-4b36-aae2-e751e441d19a)
 
-![image](<img width="624" alt="Captura de Tela 2024-05-17 às 17 22 34" src="https://github.com/GustavoCatelan/JavaChallenge/assets/127765187/1da6965b-1dc1-4bb6-8994-7ac01c5ec959">
-)
+![image](https://github.com/GustavoCatelan/JavaChallenge/assets/127765306/04cf84d1-d9c4-4492-81c4-1ecabc616195)
+
 
 Link do video:
 https://www.youtube.com/watch?v=pQHLYtz-2F0
