@@ -1,4 +1,6 @@
 Nome da aplicação: InovaTech
+Prazo:
+15/04/2024 ate dia 20/05/2024
 
 Integrantes e Responsabilidade:
 
